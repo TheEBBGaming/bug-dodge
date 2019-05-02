@@ -30,6 +30,10 @@ homeScene.create = function() {
         }
       }),
 
+      content: this.add.text(0, 0, `Last Score: ${gameState.score}`, {
+        fontSize: '24px'
+      }),
+
       actions: [
         createButton(this, 'Play'),
       ],
@@ -76,6 +80,7 @@ homeScene.create = function() {
           y: 300
         }
       });
+      gameState.score = 0;
     }, this)
     .on('button.over', function(button, groupName, index) {
       button.getElement('background').setStrokeStyle(1, 0xffffff);
@@ -164,7 +169,6 @@ gameScene.create = function() {
       this.scene.stop();
       this.scene.start('Home');
     }, [], this);
-    gameState.score = 0;
   });
 }
 
