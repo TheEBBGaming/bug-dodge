@@ -163,7 +163,7 @@ gameScene.create = function() {
     this.physics.pause();
     this.cameras.main.shake(500);
     this.time.delayedCall(250, function() {
-      this.cameras.main.fade(250, 135, 206, 235);
+      this.cameras.main.fade(250, 160, 206, 200);
     }, [], this);
     this.time.delayedCall(500, function() {
       this.scene.stop();
