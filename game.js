@@ -111,7 +111,7 @@ gameScene.preload = function() {
 }
 
 const gameState = {
-  score: 0;
+  score: 0
 };
 
 gameScene.create = function() {
