@@ -31,7 +31,7 @@ homeScene.create = function() {
       }),
 
       content: this.add.text(0, 0, `Last Score: ${gameState.score}`, {
-        fontSize: '24px'
+        fontSize: '14px'
       }),
 
       actions: [
