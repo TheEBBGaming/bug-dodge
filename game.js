@@ -31,7 +31,7 @@ homeScene.create = function() {
       }),
 
       content: this.add.text(0, 0, `Last Score: ${gameState.score}`, {
-        fontSize: '14px'
+        fontSize: '24px'
       }),
 
       actions: [
@@ -163,7 +163,7 @@ gameScene.create = function() {
     this.physics.pause();
     this.cameras.main.shake(500);
     this.time.delayedCall(250, function() {
-      this.cameras.main.fade(250);
+      this.cameras.main.fade(250, 135, 206, 235);
     }, [], this);
     this.time.delayedCall(500, function() {
       this.scene.stop();
