@@ -1,3 +1,4 @@
+console.log("Hey! Unless you know exactly what you're doing, don't put anything in here! Attackers may access this absolutely obscure and random, useless site maintained without any security by a teen to steal credit card information. Thanks for listening!")
 let homeScene = new Phaser.Scene('Home');
 let gameScene = new Phaser.Scene('Game')
 
