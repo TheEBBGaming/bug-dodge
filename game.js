@@ -164,6 +164,7 @@ gameScene.create = function() {
       this.scene.stop();
       this.scene.start('Home');
     }, [], this);
+    gameState.score = 0;
   });
 }
 
