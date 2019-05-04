@@ -118,7 +118,8 @@ gameScene.preload = function() {
 }
 
 const gameState = {
-  score: 0
+  score: 0,
+  theWorldGravity: 200
 };
 
 gameScene.create = function() {
@@ -158,7 +159,12 @@ gameScene.create = function() {
     bug.destroy();
     gameState.score += 10;
     gameState.scoreText.setText(`Score: ${gameState.score}`);
-  })
+    if (gameState.score % 1000 == 0) {
+      gameState.theWorldGravity += 20
+      this.physics.world.gravity = new Phaser.Math.Vector2(0.0, gameState.theWorldGravity)
+      console.log(this.physics.world.gravity)
+    }
+  }, null, this)
 
   this.physics.add.collider(gameState.player, bugs, () => {
     bugGenLoop.destroy();
@@ -193,7 +199,7 @@ const config = {
     default: 'arcade',
     arcade: {
       gravity: {
-        y: 200
+        y: gameState.theWorldGravity
       },
       enableBody: true,
     }
