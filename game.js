@@ -96,6 +96,7 @@ const createButton = function(scene, text) {
     background: scene.rexUI.add.roundRectangle(0, 0, 100, 40, 20, 0x5e92f3),
 
     text: scene.add.text(0, 0, text, {
+      fontFamily: 'Roboto Mono',
       fontSize: '24px'
     }),
 
@@ -128,6 +129,7 @@ gameScene.create = function() {
   platforms.create(225, 490, 'platform').setScale(1, .3).refreshBody();
 
   gameState.scoreText = this.add.text(195, 485, 'Score: 0', {
+    fontFamily: 'Roboto Mono',
     fontSize: '15px',
     fill: '#000000'
   });
