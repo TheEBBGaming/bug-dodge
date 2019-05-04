@@ -122,7 +122,14 @@ const gameState = {
   theWorldGravity: 200
 };
 
+let keyA;
+let keyD;
+
 gameScene.create = function() {
+
+  keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
+  keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+
   gameState.player = this.physics.add.sprite(225, 450, 'codey').setScale(.5);
 
   const platforms = this.physics.add.staticGroup();
@@ -181,9 +188,9 @@ gameScene.create = function() {
 }
 
 gameScene.update = function() {
-  if (gameState.cursors.left.isDown) {
+  if (gameState.cursors.left.isDown || keyA.isDown) {
     gameState.player.setVelocityX(-160);
-  } else if (gameState.cursors.right.isDown) {
+  } else if (gameState.cursors.right.isDown || keyD.isDown) {
     gameState.player.setVelocityX(160);
   } else {
     gameState.player.setVelocityX(0);
